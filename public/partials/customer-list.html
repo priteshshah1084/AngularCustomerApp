@@ -1,0 +1,13 @@
+<a href="index.html#/customers-new" class="btn btn-primary">Add New Customer</a>
+<h3 ng-show="customers.length > 0">Customers</h3>
+<table class="table">
+    <tr ng-repeat="customer in customers">
+        <td>{{customer.name}}</td>
+		<td>{{customer.email}}</td>
+		<td>{{customer.address.street}} {{customer.address.city}} {{customer.address.state}} {{customer.address.zip}}</td>
+		<td>
+            <a class="btn btn-primary" href="#customers/{{customer.id}}">Edit</a>
+            <a class="btn btn-danger" ng-click="deleteCustomer(customer)">Delete</a>
+        </td>
+    </tr>
+</table>
